@@ -1,16 +1,26 @@
 package com.api.cpf.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.api.cpf.client.EnderecoService;
+import com.api.cpf.response.Endereco;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
-@RequestMapping(value = "/api/cep")
+@RequestMapping("/api")
 public class ApiController {
 
-    @GetMapping("/hello")
-    public String hello (String s){
-        return "Oi mundo";
+    @Autowired
+ EnderecoService enderecoService;
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/{cep}")
+      public ResponseEntity<Endereco> retornaEndereco(@PathVariable String cep){
+        Endereco endereco = enderecoService.getAddressByCep(cep);
+
+        return ResponseEntity.ok(endereco);
 
     }
 }
