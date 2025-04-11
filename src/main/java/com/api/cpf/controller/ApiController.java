@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class ApiController {
 
     @Autowired
- EnderecoService enderecoService;
+    EnderecoService enderecoService;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{cep}")
-      public ResponseEntity<Endereco> retornaEndereco(@PathVariable String cep){
+    public ResponseEntity<Endereco> retornaEndereco(@PathVariable String cep){
         Endereco endereco = enderecoService.getAddressByCep(cep);
 
         return ResponseEntity.ok(endereco);
