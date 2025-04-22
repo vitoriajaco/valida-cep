@@ -10,6 +10,7 @@
               <option name="indexedFiles">
                 <map>
                   <entry key="$PROJECT_DIR$/src/main/java/com/api/cpf/client/Name.java" value="18501" />
+                  <entry key="$PROJECT_DIR$/src/main/java/com/api/cpf/exception/GlobalExceptionHandler.java" value="64843" />
                 </map>
               </option>
               <option name="projectId" value="01JRG00Q998KCDM0CCCRW3FYJ1" />
